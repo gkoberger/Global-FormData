@@ -1,0 +1,24 @@
+FormData that works everywhere
+This abstracts out the nifty new FormData object in FF4, so that
+non-Firefox 4 browsers can take advantage of it.  If the user
+is using FF4, it will use FormData.  If not, it will construct
+the headers manually.
+
+ONLY DIFFERENCE: You don't create your own xhr object.
+
+Example #1:
+    var fd = gFormData();
+    fd.append("test", "awesome");
+    fd.append("afile", $('#input')[0].files[0]);
+    fd.xhr.setHeader("whatever", "val");
+    fd.open("POST", "http://example.com");
+    fd.send();
+
+Example #2:
+    var fd = gFormData();
+    fd.append("test", "awesome");
+    fd.append("afile", $('#input')[0].files[0]);
+    fd.xhr.setHeader("whatever", "val");
+    fd.xhr.open("POST", "http://example.com");
+    fd.send();
+
