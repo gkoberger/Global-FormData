@@ -4,8 +4,16 @@ non-Firefox 4 browsers can take advantage of it.  If the user
 is using FF4, it will use FormData.  If not, it will construct
 the headers manually.
 
-ONLY DIFFERENCE: You don't create your own xhr object.
+MORE INFORMATION:
+http://hacks.mozilla.org/2010/05/formdata-interface-coming-to-firefox/
 
+DIFFERENCES:
+Unlike actual FormData, you don't create an `xhr` element.  Rather, the
+plugin will create it and you can access it using formdata.xhr.
+
+You don't call `xhr.send(formdata)`, you call `formdata.send()`.
+
+EXAMPLES:
 Example #1:
     var fd = gFormData();
     fd.append("test", "awesome");
