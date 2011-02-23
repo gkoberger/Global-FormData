@@ -1,4 +1,4 @@
-FormData that works everywhere
+FormData that works everywhere!
 This abstracts out the nifty new FormData object in FF4, so that
 non-Firefox 4 browsers can take advantage of it.  If the user
 is using FF4, it will use FormData.  If not, it will construct
